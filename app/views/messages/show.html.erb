@@ -1,0 +1,17 @@
+<% if @message.user_id == session[:current_user_id] || @message.receiverid == session[:current_user_id] %>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="inbox-thumbnail mb-3">
+			    <div class="card-body">
+			        <h4 class="card-title">
+			         	<%= @message.title %>
+			     	</h4>
+			     <h6 class="card-subtitle mb-2 text-muted"><%= @message.user.name %></h6>    
+			     <p class="card-text">
+			       <%= @message.content %>	
+			     </p>
+				</div>
+			</div>
+		</div>
+	</div>
+<% end %>

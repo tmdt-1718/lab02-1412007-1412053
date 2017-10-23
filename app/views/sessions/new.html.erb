@@ -1,0 +1,26 @@
+<%= render partial: 'flash_message', locals: {notice: flash} %>
+<div class="row mt-2">
+	<div class="col-md-12">
+		<h1>Login Page</h1>
+	</div>
+</div>
+<div class="row mb-4">
+	<div class="col-md-12">
+		<%= form_with scope: :session, local: true do |f|%>		
+		<div class="form-group">
+			<label for="">
+				Email
+			</label>
+			<%= f.text_field :email, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="">Password</label>
+			<%= f.password_field :password, class: "form-control" %>
+		</div>
+
+		<button type="submit" class="btn btn-primary mr-3">Login</button>
+		<%= link_to "Register new account", new_user_path %>
+		<% end %>
+
+	</div>
+</div>

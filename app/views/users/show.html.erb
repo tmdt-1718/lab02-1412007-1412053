@@ -1,0 +1,40 @@
+<%= render partial: 'flash_message', locals: {notice: flash} %>
+
+<div class="row col-md-12">
+	<div class="col-md-6">
+		<h3>Your Friend</h3>
+		
+		<% @user.friendships.each do |friendship| %>
+		<div>
+			<li><%= friendship.friend.name %>
+			<div class="float-right">
+				<%= link_to "Unfriend", friendship_path(:id => friendship), :method => :delete %>
+			</div>
+			</li>
+		</div>
+		<br>
+		
+		<% end %>  
+
+	</div>
+
+	<div class="col-md-6">
+		<h3>People you may know</h3>
+
+		<% User.where.not(id: Friendship.where(user_id: current_user.id).pluck(:friend_id)).each do |user| %>
+			<% if user != current_user && user != current_user.friends%>
+				<div>
+					<li>
+						<%=user.name%>
+						<div class="float-right">
+							<%= link_to "Add Friend", friendships_path(:friend_id => user, :id => current_user), :method => :post %>
+						</div>
+					</li>
+				</div>
+				
+				<br>
+
+			<% end %>
+		<% end %>
+	</div>
+</div>

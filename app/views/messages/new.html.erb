@@ -1,0 +1,34 @@
+<%= render partial: 'flash_message', locals: {notice: flash} %>
+
+<div class="row">
+	<div class="col-md-12 mt-2">
+		<h1>New Message</h1>
+	</div>
+</div>
+<div class="row mb-5">
+	<div class="col-md-12">
+		<%= form_with scope: :message, url: create_message_path, local: true do |f|%>
+		<div class="form-group">
+			<label for="">Subject</label>
+			<%= f.text_field :title, class: "form-control" %>
+		</div>
+		<div class="form-group">
+			<label for="">
+				Content
+			</label>
+			<%= f.text_area :content, class: "form-control" %>
+		</div>
+
+		<!-- @friends = Friendship.where(user_id: current_user.id) -->
+		<div class="form-group">
+			<label for="">To</label>
+			<%= f.collection_select :receiverid, @friends, :id, :name, {class: ""} %>
+		</div>
+		
+
+		<div class="row container mt-5">
+			<button type="submit" class="btn btn-primary">Send</button>
+		</div>		
+		<% end %>
+	</div>
+</div>

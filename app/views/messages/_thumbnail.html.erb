@@ -1,0 +1,29 @@
+<% if a.seentime %>
+<div class="inbox-thumbnail mb-3" highlight>
+  <div class="card-body">
+    <h4 class="card-title">
+     <%= link_to message_path(a.id), class: "card-title" do %>
+     <%= a.title %>
+     <% end %>
+   </h4>
+   <h6 class="card-subtitle mb-2 text-muted"><%= a.user.name %></h6>
+   <p class="card-text">
+     <%= truncate(a.content) %>	
+   </p>
+ </div>
+</div>
+<% else %>
+  <div class="card text-white bg-secondary mb-3">
+    <div class="card-body">
+      <h4 class="card-title">
+       <%= link_to message_path(a.id), class: "card-title" do %>
+       <%= a.title %>
+       <% end %>
+     </h4>
+     <h6 class="card-subtitle mb-2 text-white"><%= a.user.name %></h6>
+     <p class="card-text">
+       <%= truncate(a.content) %> 
+     </p>
+   </div>
+  </div>
+<% end %>
