@@ -1,0 +1,48 @@
+<%= render partial: 'flash_message', locals: {notice: flash} %>
+
+<h1 class="mt-2">Sent messages</h1>
+
+<% if @messages.count == 0 %>
+<h3>0 message</h3>
+
+<% else %>
+<% @messages.each do |message| %>
+<!-- <%= render partial: "thumbnail", locals: {a: message}%> -->
+
+<div class="inbox-thumbnail mb-3" highlight>
+	<div class="card-body">
+		<img class="card-img-top" style="max-height: 315px;" src="<%= message.image %>" alt="">
+
+		<h4 class="card-title mt-3">
+			<%= link_to message_path(message.id), class: "card-title" do %>
+			<%= message.title %>
+
+			<% end %>
+		</h4>
+		<h6 class="card-subtitle mb-2 text-muted"><%= User.find_by(id: message.receiverid).name %></h6>
+		<p class="card-text">
+			<%= truncate(message.content) %>	
+		</p>
+		<br>
+		<% if message.seentime.nil? %>
+		<div class="text-muted">&#10007; Unseen</div>
+		<% else%>
+		<div class="text-muted">&#10003; Seen <%= message.seentime %></div>
+		<% end %>
+	</div>
+</div>
+
+<% end %>
+<% end %>
+
+<div class="digg_pagination">
+	<%= will_paginate @messages %>
+</div>
+
+<div class="md-col-12 card-body " align="right">
+		<div align="right" class="mr-4 mb-3 text-right">
+			<a href="" align="right">
+				<img border="0px" width="48px" src="/up-arrow.png">
+			</a>
+		</div>
+</div>

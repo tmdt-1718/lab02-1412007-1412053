@@ -1,0 +1,27 @@
+<%= render partial: 'flash_message', locals: {notice: flash} %>
+
+<h1 class="mt-2">Inboxs</h1>
+
+
+
+<% if @messages.count == 0 %>
+	<h3>0 message</h3>
+<% else %>
+	<% @messages.each do |message| %>
+		<%= render partial: "thumbnail", locals: {a: message}%>
+	<% end %>
+<% end %>
+
+
+<div class="text-center">
+<div class="digg_pagination">
+	<%= will_paginate @messages %>
+</div>
+</div>
+<div class="md-col-12 card-body " align="right">
+		<div align="right" class="mr-4 mb-3 text-right">
+			<a href="" align="right">
+				<img border="0px" width="48px" src="/up-arrow.png">
+			</a>
+		</div>
+</div>

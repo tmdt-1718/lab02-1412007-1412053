@@ -1,0 +1,39 @@
+<% if a.seentime %>
+<div class="card mb-3" highlight>
+  <div class="card-body">
+    <img class="card-img-top" style="max-height: 315px;" src="<%= a.image %>" alt="">
+
+    <h4 class="card-title mt-3">
+     <%= link_to message_path(a.id), class: "card-title" do %>
+     <%= a.title %>
+     <% end %>
+   </h4>
+   <h6 class="card-subtitle mb-2 text-muted"><%= a.user.name %></h6>
+   <p class="card-text">
+     <%= truncate(a.content) %>	
+   </p>
+   <div class="text-muted">
+     Created at <%= a.created_at %>
+   </div>
+ </div>
+</div>
+<% else %>
+<div class="card mb-3" style="background: rgba(250, 0, 0, .2);">
+  <div class="card-body">
+    <img class="card-img-top" style="max-height: 315px;" src="<%= a.image %>" alt="">
+
+    <h4 class="card-title mt-3">
+     <%= link_to message_path(a.id), class: "card-title" do %>
+     <%= a.title %>
+     <% end %>
+   </h4>
+   <h6 class="card-subtitle mb-2 text-white"><%= a.user.name %></h6>
+   <p class="card-text">
+     <%= truncate(a.content) %> 
+   </p>
+   <div class="text-white">
+     Created at <%= a.created_at %>
+   </div>
+ </div>
+</div>
+<% end %>

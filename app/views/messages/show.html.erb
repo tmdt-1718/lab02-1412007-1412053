@@ -1,0 +1,27 @@
+<% if @message.user_id == session[:current_user_id] || @message.receiverid == session[:current_user_id] %>
+<div class="row mt-3">
+	<div class="col-md-12">
+		<div class="inbox-thumbnail mb-3">
+			<div class="card-body">
+				<img class="card-img-top" style="max-height: 315px;" src="<%= @message.image %>" alt="">
+
+				<h4 class="card-title mt-3">
+					<%= @message.title %>
+				</h4>
+				<h6 class="card-subtitle mb-2 text-muted"><%= @message.user.name %></h6>    
+				<p class="card-text">
+					<%= @message.content %>	
+				</p>
+				<div class="text-muted">
+					Created at <%= @message.created_at %>
+				</div>
+				<% if @message.seentime.nil? %>
+				<div class="text-muted">&#10007; Unseen</div>
+				<% else%>
+				<div class="text-muted">&#10003; Seen <%= @message.seentime %></div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>
+<% end %>

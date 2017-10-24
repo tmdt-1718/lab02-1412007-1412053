@@ -1,0 +1,77 @@
+<%= render partial: 'flash_message', locals: {notice: flash} %>
+
+<div class="row col-md-12 mt-2">
+	<div class="col-md-6">
+		<h2>Your Friend</h2>
+		
+		<% current_user.friendships.each do |friendship| %>
+		<div>
+			<li><%= friendship.friend.name %>
+			<div class="float-right">
+				<%= link_to "Unfriend", friendship_path(:id => friendship), :method => :delete %>
+			</div>
+			</li>
+		</div>
+		<br>
+		
+		<% end %>  
+
+	</div>
+
+	<div class="col-md-6">
+		<h2>People you may know</h2>
+		
+		<% User.where.not(id: Friendship.where(user_id: current_user.id).pluck(:friend_id)).where.not(id: Blocklist.where(user_id: current_user.id).pluck(:blocked_id)).where.not(id: Blocklist.where(blocked_id: current_user.id).pluck(:user_id)).each do |user| %>
+			<% if user != current_user && user != current_user.friends%>
+				<div>
+					<li>
+						<%=user.name%>
+						<div class="float-right">
+							<%= link_to "Add Friend", friendships_path(:friend_id => user, :id => current_user), :method => :post %>
+							<span class="mr-3"></span>
+							<%= link_to "Block", blocklists_path(:blocked_id => user, :id => current_user), :method => :post %>
+						</div>
+					</li>
+				</div>
+				
+				<br>
+
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<br>
+<br>
+<br>
+<!-- <div class="col-md-12"> -->
+<div class="col-md-6">
+	<!-- <div class="col-md-6"> -->
+		<h2>Block list</h2>
+		
+		<% current_user.blocklists.each do |blocklist| %>
+		<div>
+			<li><%= blocklist.blocked.name %>
+			<div class="float-right mr-3">
+				<%= link_to "Unblock", blocklist_path(:id => blocklist), :method => :delete %>
+			</div>
+			</li>
+		</div>
+		<br>
+		
+		<% end %>  
+
+	<!-- </div> -->
+</div>
+<div class="col-md-6"></div>
+<!-- </div> -->
+
+<div class="md-col-12 card-body " align="right">
+	<!-- <div class="row text-right" align="right"> -->
+		<div align="right" class="mr-4 mb-3 text-right">
+			<a href="" align="right">
+				<img border="0px" width="48px" src="/up-arrow.png">
+			</a>
+		</div>
+		<!-- </div> -->
+</div>
