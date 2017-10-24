@@ -1,12 +1,12 @@
-# BT-TMDT-2 - *Name of your app*
+# BT-TMDT-2 - *MyBlog*
 
-**Name of your app** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
+**MyBlog** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
 Thành viên:
 * [x] **1412007** Lê Mỹ Anh (1412007)
 * [x] **1412053** Nguyễn Huyền Quý Châu (1412053)
 
-URL: **URL hosting của bài tập**
+URL: **https://tmdt-lab02-1412007-1412053.herokuapp.com**
 
 ## Yêu cầu
 
@@ -16,24 +16,24 @@ Yêu cầu **GIT**:
 * [x] Sử dụng GIT theo [Feature Branch Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows#feature-branch-workflow).
 
 Yêu cầu **bắt buộc**
-* [x] Đăng ký tài khoản bằng email, password, và tên.  (**MSSV**)
-* [x] Đăng nhập bằng email và password. (**MSSV**)
-* [ ] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi. (**1412007**)
-* [ ] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác. (**1412007**)
+* [x] Đăng ký tài khoản bằng email, password, và tên.  (**1412007**)
+* [x] Đăng nhập bằng email và password. (**1412007**)
+* [x] Sau khi đăng nhập, người dùng sẽ được chuyển đến trang liệt kê danh sách các tin nhắn đã nhận, sắp xếp theo thứ tự thời gian, một nút để tạo tin nhắn mới, nút để xem danh sách bạn bè và nút để xem các tin nhắn đã gửi. (**1412007**)
+* [x] Tin nhắn chưa đọc phải được làm nổi bật hơn các tin nhắn khác. (**1412007**)
 * [x] Nhấn vào nút "xem danh sách bạn" sẽ chuyển người dùng đến trang liệt kê danh sách người dùng cùng với các chức năng thêm bạn. (**1412053**)
 * [x] Nhấn nút "tạo tin nhắn" sẽ chuyển sang giao diện cho phép người dùng gửi tin nhắn cho người dùng trong danh sách bạn bè. Người gửi phải nằm trong danh sách bạn bè và cho phép người dùng chọn qua dropdown. (**1412053**)
 * [x] Nhấn "xem tin đã gửi" sẽ chuyển sang giao diện hiển thị danh sách tin nhắn đã gửi. Mỗi tin nhắn cần hiện thời gian người nhận đã đọc. (**1412053**)
 * [ ] Mỗi người dùng chỉ có thể đọc tin nhắn 1 lần duy nhất. (**MSSV**)
-* [ ] Người dùng chỉ có thể đọc tin nhắn khi họ nằm trong danh sách người nhận. (**1412007**)
+* [x] Người dùng chỉ có thể đọc tin nhắn khi họ nằm trong danh sách người nhận. (**1412007**)
 
 Yêu cầu **không bắt buộc**:
 * [x] Người dùng có thể gửi hình ảnh đính kèm theo thông điệp. (**1412053**)
 * [ ] Người dùng có thể gửi tin nhắn đến nhiều người dùng cùng lúc. (**MSSV**)
 * [ ] Người dùng có thể đăng nhập với Facebook. (**MSSV**)
-* [ ] Người dùng có thể block người khác. Sau khi block, người dùng sẽ không nhận được tin nhắn từ người bị block gửi nữa. (**MSSV**)
+* [ ] Người dùng có thể block người khác. Sau khi block, người dùng sẽ không nhận được tin nhắn từ người bị block gửi nữa. (**1412053**)
 * [x] Người dùng có thể xóa người dùng khác ra khỏi danh sách bạn. (**1412053**)
-* [ ] Người dùng có thể unblock người dùng khác. (**MSSV**)
-* [ ] Khi người dùng kéo xuống cuối trang, các tin nhắn tiếp theo sẽ tự động hiển thị hoặc có nút nhấn "Xem thêm tin nhắn" để nạp thêm danh sách tin nhắn. (**MSSV**)
+* [ ] Người dùng có thể unblock người dùng khác. (**1412053**)
+* [x] Khi người dùng kéo xuống cuối trang, các tin nhắn tiếp theo sẽ tự động hiển thị hoặc có nút nhấn "Xem thêm tin nhắn" để nạp thêm danh sách tin nhắn. (**1412007**)
 * [ ] Người dùng sẽ nhận được email thông báo khi họ nhận được tin nhắn cùng với link để xem tin nhắn. (**MSSV**)
 * [ ] Người dùng sẽ nhận được email khi người nhận đã đọc tin nhắn. (**MSSV**)
 * [ ] Người dùng có thể gửi tin nhắn cho người dùng ngoài hệ thống. Khi đó, người nhận sẽ nhận được 1 email chứa link đăng ký tài khoản. Sau khi đăng ký tài khoản, họ có thể xem tin nhắn đã nhận. (**MSSV**)
@@ -44,7 +44,7 @@ Liệt kê các **yêu cầu nâng cao** đã thực hiện:
 
 ## Demo
 
-Link ảnh GIF demo ứng dụng:
+Link ảnh GIF demo ứng dụng: https://youtu.be/LW3_ywoRvAc
 
 ![Video Walkthrough](demo.gif)
 
