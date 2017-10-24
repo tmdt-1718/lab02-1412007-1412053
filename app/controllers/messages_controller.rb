@@ -30,6 +30,7 @@ class MessagesController < ApplicationController
 	end
 
 	def showreceivedmessage
+		#.page(params[:page]).per_page(2) --moi trang gom 2 mail
 		@messages = Message.where(receiverid: session[:current_user_id]).order('created_at DESC').page(params[:page]).per_page(2)
 		# @messages = Message.find_by(receiverid: session[:current_user_id])
 		# (session[:current_user_id])
