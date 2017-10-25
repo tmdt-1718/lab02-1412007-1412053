@@ -11,6 +11,9 @@ class User < ApplicationRecord
 
 	has_secure_password
 
+	validates :email, :presence	=> true,
+			  :uniqueness 		=> {:case_sensitive => false}
+			  
 	def self.authenticate!(session_params)
 		user = User.authenticate(session_params)
 
