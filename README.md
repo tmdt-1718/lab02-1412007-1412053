@@ -1,6 +1,6 @@
-# BT-TMDT-2 - *MyBlog*
+# BT-TMDT-2 - *MyMessage*
 
-**MyBlog** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
+**MyMessage** là một bài tập môn TMDT. Ứng dụng cho phép người dùng gửi tin nhắn (email) cho người dùng khác.
 
 Thành viên:
 * [x] **1412007** Lê Mỹ Anh (1412007)
